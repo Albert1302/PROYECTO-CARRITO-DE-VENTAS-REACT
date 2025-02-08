@@ -26,10 +26,9 @@ function App() {
   }
     return (
     <>
-      <h1 className="text-blue-600">Bienvenido a React</h1>
       <Header/>
       <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h3 className="font-semibold text-blue-blue-600">Productos mas vendidos</h3>
+        <h3 className="font-semibold text-blue-blue-600 text-lg">Productos mas vendidos</h3>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {
           data.map((product)=>(
