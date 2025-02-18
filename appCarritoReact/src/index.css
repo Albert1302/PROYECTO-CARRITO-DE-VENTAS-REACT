@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+.carrito {
+    background-color: transparent;
+    border: none;
+    max-width: 2rem;
+    position: relative;
+    z-index: 100;
+}
+.carrito #carrito {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.carrito:hover #carrito {
+    display: block;
+    background-color: white;
+    padding: 10px;
+    height: fit-content;
+    min-width: 350px;
+    width: fit-content;
+    top: 100%;
+    right: 0;
+    left: unset;
+    margin-left: unset;
+    margin-right: unset;
+}
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+  
+thead,
+tbody,
+tr,
+td,
+th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+  }
+  .table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    border-bottom-width: 1px;
+  }
+  .table > tbody {
+    vertical-align: inherit;
+  }
+  .table > thead {  
+    vertical-align: bottom;
+  }
