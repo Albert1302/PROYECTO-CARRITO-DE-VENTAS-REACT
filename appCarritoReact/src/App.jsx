@@ -4,9 +4,9 @@ import {useEffect, useState} from "react"
 import { db } from "./data/db"
 function App() {
 
-  const initialCart = () =>{
-    const localStoragecart = localStorage.getItem('cart');
-    return localStoragecart ? JSON.parse(localStoragecart ) : []
+  const initialCart = () => {
+    const localStorageCart = localStorage.getItem('cart');
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
   }
 
   const [data] = useState(db);

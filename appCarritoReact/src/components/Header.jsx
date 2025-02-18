@@ -4,8 +4,11 @@ const Header = ({carrito,removeFromCart,increaseQuantity,decreaseQuantity,clearC
     // Esto mejora el rendimiento de la aplicacion, especialmente cuando el calculo depende de un estado o cambio frecuente
 
     // const isEmpty = carrito.length === 0;
+
     const isEmpty = useMemo(() => carrito.length === 0, [carrito]);
+
    // .reduce((acumulador, arreglo )=> 'La funcion que hara',0 'Eso inicia el parametro que se coloca') para sumar los precios de los productos en el carrito
+
    const cartTotal = useMemo(()=>carrito.reduce((total,item) => total + (item.cantidad * item.precio),0),[carrito])
 
     return(
@@ -61,7 +64,7 @@ const Header = ({carrito,removeFromCart,increaseQuantity,decreaseQuantity,clearC
                                     className="px-2 py-1 bg-gray-900 text-white"> - </button>
                                  </td>
                                  <td>
-                                    ${product.precio * product.cantidad}
+                                    ${(product.precio * product.cantidad).toFixed(2) }
                                  </td>
                                  <td>
                                     <button onClick={()=>removeFromCart(product.id)} 
@@ -74,7 +77,7 @@ const Header = ({carrito,removeFromCart,increaseQuantity,decreaseQuantity,clearC
                         <tfoot>
                             <tr>
                                 <td colSpan="3"></td>
-                                <td colSpan="2"> <p>Total Pagar: $<span>{cartTotal} </span> </p> </td>
+                                <td colSpan="3"> <p>Total Pagar: $<span>{cartTotal.toFixed(2)} </span> </p> </td>
                                 <td></td>
                             </tr>
                         </tfoot>
