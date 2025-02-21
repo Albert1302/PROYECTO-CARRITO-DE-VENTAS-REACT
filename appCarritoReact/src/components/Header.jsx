@@ -10,7 +10,13 @@ const Header = ({carrito,removeFromCart,increaseQuantity,decreaseQuantity,clearC
    // .reduce((acumulador, arreglo )=> 'La funcion que hara',0 'Eso inicia el parametro que se coloca') para sumar los precios de los productos en el carrito
 
    const cartTotal = useMemo(()=>carrito.reduce((total,item) => total + (item.cantidad * item.precio),0),[carrito])
+  
+    const totalItems = useMemo(()=>carrito.reduce((total,item)=> total + item.cantidad,0),[carrito])
 
+
+    // REDUCE: Se usa en arrays para reducir todos sus elementos a un unico valor, aplicando una funcion acumulativa
+
+    
     return(
       <header className="bg-gray-900 text-white py-4 px-6">
       <div className="container mx-auto flex justify-between items-center">
@@ -24,7 +30,12 @@ const Header = ({carrito,removeFromCart,increaseQuantity,decreaseQuantity,clearC
               </ul>
           </nav>
           <div className="text-2xl cursor-pointer carrito">
-            🛒
+            <span className="text-2xl">
+                🛒
+            </span>
+            <span className="absolute -top-2 -right-3 bg-red-600 text-while text-sm font-bold px-1 py-1 rounded-full">
+                {totalItems}
+            </span>
             <div id="carrito" className="bg-white p-3 text-gray-900">
                     {
                         isEmpty ?(
